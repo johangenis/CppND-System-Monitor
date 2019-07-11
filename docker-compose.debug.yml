@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  cppnd-system-monitor:
+    image: cppnd-system-monitor
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000

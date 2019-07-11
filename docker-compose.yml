@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+ cppnd-system-monitor:
+  build:
+    context: .
+  ports:
+    - "3000:3000"
+  volumes:
+    - ./CppND-System-Monitor:/CppND-System-Monitor
+  command: >
+      sh -c "g++ -std="c++17" main.cpp"
+  command: >
+      sh -c "./a.out"
+ 
+
+
+# version: '2.1'
+
+# services:
+#   cppnd-system-monitor:
+#     image: cppnd-system-monitor
+#     build: .
+#     ports:
+#       - 3000:3000
