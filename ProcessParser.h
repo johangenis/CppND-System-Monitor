@@ -44,4 +44,26 @@ private:
     static bool isPidExisting(string pid);
 };
 
-// TODO: Define all of the above functions below:
+// Define all of the above functions below:
+// getVmSize function definition.
+std::string getVmSize(std::string pid) {
+    std::string line;
+    // Declaring search attribute for the file.
+    std::string name = "VmData";
+    std::string value;
+    float result;
+    // Opening Stream for specific file.
+    ifstream stream = Util::getStream((Path::basePath() + pid + Path::statusPath()));
+        while (std::getline(stream, line)) {
+            // Searching line by line.
+            if (line.compare(0, name.size(), name) == 0) {
+                // Slicing string line on word string for values using sstream.
+                std::istringstream buf(line);
+                std::istream_iterator<string> beg(buf), end;
+                std::vector<string> values(beg, end);
+                // Conversion kb to mb.
+                result = (stof(values[1])/float(1024));
+                break;
+            }
+        }
+};
