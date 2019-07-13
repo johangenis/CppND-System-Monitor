@@ -21,8 +21,8 @@ WORKDIR /CppND-System-Monitor
 COPY . /CppND-System-Monitor
 
 # Create a user.
-RUN adduser johan
-USER johan
+# RUN adduser johan
+# USER johan
  
 # Use GCC to compile the Test.cpp source file
 # RUN g++ -o Test Test.cpp

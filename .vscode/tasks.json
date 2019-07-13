@@ -4,7 +4,7 @@
     "tasks": [
         {
             "label": "build",
-            "command": "g++",
+            "command": "clang++",
             "args": [
                 "-o",
                 "sysmon", // executable

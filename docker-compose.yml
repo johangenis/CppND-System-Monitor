@@ -9,7 +9,7 @@ services:
   volumes:
     - ./CppND-System-Monitor:/CppND-System-Monitor
   command: >
-      sh -c "g++ -std="c++17" main.cpp"
+      sh -c ("g++ -std=c++17 main.cpp")
   command: >
       sh -c "./a.out"
  
